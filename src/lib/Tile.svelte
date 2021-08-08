@@ -24,44 +24,40 @@
 
 <style>
 	.tile {
+		background-color: rebeccapurple;
 		width: 100%;
 		height: 100%;
-		background-color: rebeccapurple;
-		transform-style: preserve-3d;
-		transform: rotateY(0deg);
-		transition: transform 0.3s ease, background-color 0.2s ease;
-		position: relative;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		transition: all 0.3s ease;
+		position: relative;
+		transform: rotateY(0deg);
 	}
-	.tile::after {
+
+	.faceDown {
+		transform: rotateY(180deg);
+	}
+
+	.faceDown::before {
 		width: 100%;
 		height: 100%;
 		content: '';
-		background-color: #ddd;
 		position: absolute;
 		top: 0;
 		left: 0;
-		transform: rotateY(180deg);
-		transition: transform 0.3s ease, background-color 0.2s ease;
-		transform-style: preserve-3d;
-		backface-visibility: hidden;
-		-webkit-backface-visibility: hidden;
+		background-color: #ddd;
+		transition: all 0.3s ease;
 	}
-
-	.tile.faceDown {
-		transform: rotateY(180deg);
+	.faceDown:hover::before {
+		background-color: #fff;
 	}
-	.tile.faceDown::before {
-		transform: rotateY(0deg);
-	}
-	.tile.tile.solved {
-		transform: rotateY(0deg);
+	.tile.solved {
 		background-color: gold;
+		transform: rotateY(0deg);
 	}
-	.tile:hover::after {
-		background-color: #eee;
+	.solved::before {
+		opacity: 0;
 	}
 
 	img {
