@@ -11,7 +11,7 @@
 <div
 	on:click={() => {
 		if (!solved || faceDown) {
-      faceDown = false;
+			faceDown = false;
 			dispatch('tileClicked');
 		}
 	}}
@@ -48,7 +48,6 @@
 		transform-style: preserve-3d;
 		backface-visibility: hidden;
 		-webkit-backface-visibility: hidden;
-    visibility: hidden;
 	}
 
 	.tile.faceDown {
