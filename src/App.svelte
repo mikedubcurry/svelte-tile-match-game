@@ -26,7 +26,7 @@
 		{ src: react, faceDown: true, solved: false },
 		{ src: ts, faceDown: true, solved: false },
 		{ src: node, faceDown: true, solved: false },
-	].sort(() => 0.5 - Math.random())
+	].sort(() => 0.5 - Math.random());
 
 	let selected = 0;
 
@@ -64,17 +64,47 @@
 </main>
 
 <style>
+  :global(*, *::before, *::after) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  :global(body) {
+    background-color: #444;
+
+  }
 	main {
 		text-align: center;
 		padding: 1em;
-		margin: 0 auto;
-		width: 90vh;
-		height: 90vh;
+		margin:  auto;
+		width: 95vh;
+		height: 95vh;
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 5px;
 	}
 	div {
-		width: calc(90vh / 4);
+		width: calc(95vh / 4 - 20px);
+		height: calc(95vh / 4 - 20px);
+	}
+	@media (orientation: portrait) {
+    main {
+      width: 95vw;
+      height: 95vw;
+    }
+		div {
+			width: calc(95vw / 4 - 20px);
+			height: calc(95vw / 4 - 20px);
+		}
+	}
+	@media (orientation: landscape) {
+    main {
+      width: 95vh;
+      height: 95vh;
+    }
+		div {
+			width: calc(95vh / 4 - 20px);
+			height: calc(95vh / 4 - 20px);
+		}
 	}
 </style>

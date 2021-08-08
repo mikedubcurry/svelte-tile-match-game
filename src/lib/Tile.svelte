@@ -12,7 +12,6 @@
 	on:click={() => {
 		if (!solved || faceDown) {
       faceDown = false;
-
 			dispatch('tileClicked');
 		}
 	}}
@@ -65,7 +64,6 @@
 	}
 
 	img {
-		/* object-fit: fill */
 		width: 90%;
 	}
 </style>
