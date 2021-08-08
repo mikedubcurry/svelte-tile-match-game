@@ -47,6 +47,7 @@
 		transition: transform 0.3s ease, background-color 0.2s ease;
 		transform-style: preserve-3d;
 		backface-visibility: hidden;
+    visibility: hidden;
 	}
 
 	.tile.faceDown {
